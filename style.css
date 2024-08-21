@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    font-size: 62.5%;
+  }
+  
+  /* BODY */
+  body {
+    font-size: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    color: #e1e1e6;
+    background: #000;
+  }
+  
+  /* APP */
+  #app {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+  
+    padding: 2rem;
+    gap: 4rem;
+  }
+  
+  /* HEADER */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  header > img {
+    width: clamp(20rem, 3vw, 32rem);
+  }
+  
+  nav {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+  }
+  
+  nav input {
+    font-size: 1.4rem;
+    padding: 1.6rem;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+  
+    background: #06181c;
+    color: #fff;
+  
+    width: 100%; /* Define que o input ocupará 100% da largura da div */
+  }
+  
+  nav button {
+    appearance: none;
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+  
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 3.2rem;
+  
+    color: #fff;
+    background: #065e7c;
+  }
+  
+  nav button:hover {
+    color: #065e7c;
+    background: #fff;
+  }
+  
+  nav button:hover img {
+    content: url("./assets/star-icon-3.svg"); /* Altera a img do botão no hover */
+  }
+  
+  /* TABLE */
+  .table-container {
+    border-radius: 1.2rem;
+    border: 1px solid #4a808c;
+    overflow: hidden; /* Garante que o border-radius seja aplicado corretamente */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando necessário */
+  }
+  
+  table * {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: #e1e1e6;
+    font-weight: 700;
+  }
+  
+  table {
+    background: #06181c;
+    border-collapse: collapse; /* Elimina os espaços entre os quadradinhos */
+    width: 100%; /* Garante que a tabela ocupe todo o espaço do contêiner */
+  }
+  
+  table th {
+    background: #06181c;
+    text-align: left;
+    padding: 1.6rem 1.2rem;
+  }
+  
+  /* EMPTY TABLE */
+  .empty-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    color: #4e5455;
+  
+    padding: 6rem 4rem;
+  }
+  
+  .empty-info img {
+    width: 8rem;
+    height: auto;
+  }
+  
+  table tr:nth-child(odd) {
+    /* pegando as linhas ímpares */
+    background: black;
+  }
+  
+  td {
+    padding: 1.6rem 1.2rem;
+  }
+  
+  td.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  
+  td.user img {
+    max-width: 5.6rem;
+    max-height: 5.6rem;
+  
+    object-fit: cover; /* P/ casos em q as imgs tenham a necessidade de se encaixar nas medidas acima*/
+    border-radius: 50%; /* macete p/ arredondar a img! */
+  
+    display: none;
+  }
+  
+  td.user a {
+    text-decoration: none;
+    color: #e1e1e6;
+  
+    cursor: pointer;
+  }
+  
+  td.user span {
+    font-weight: 400;
+  }
+  
+  td .remove {
+    background: none;
+    border: none;
+  
+    color: red;
+  
+    cursor: pointer;
+  }
+  
+  /* MEDIA QUERIES */
+  @media (min-width: 1024px) {
+    #app {
+      padding: 12rem 16rem;
+    }
+  
+    header {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    nav {
+      gap: 0.8rem;
+      grid-template-columns: 2fr 1fr;
+  
+      input {
+        border-radius: 0.5rem;
+        font-size: 1.6rem;
+      }
+      button {
+        border-radius: 0.5rem;
+        font-size: 1.4rem;
+      }
+    }
+  
+    table * {
+      font-size: 2rem;
+      line-height: 3.2rem;
+  
+      th {
+        padding: 1.6rem 2.4rem 1.6rem 4rem;
+      }
+    }
+  
+    .empty-info {
+      font-size: 4rem;
+      gap: 6rem;
+  
+      img {
+        width: 12rem;
+      }
+    }
+  
+    td {
+      padding: 2.4rem 2.4rem 2.4rem 4rem;
+    }
+  
+    td.user img {
+      display: flex;
+    }
+  }
